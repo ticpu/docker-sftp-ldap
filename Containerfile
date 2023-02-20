@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y \
     mkdir -p /data && \
 # Configure sshd
     sed -i 's|^AuthorizedKeysFile|#AuthorizedKeysFile|' /etc/ssh/sshd_config && \
-    echo 'AuthorizedKeysFile /dev/null' >> /etc/ssh/sshd_config && \
+    echo 'AuthorizedKeysFile none' >> /etc/ssh/sshd_config && \
     echo 'AuthorizedKeysCommandUser nobody' >> /etc/ssh/sshd_config && \
     echo 'AuthorizedKeysCommand /usr/bin/sss_ssh_authorizedkeys' >> /etc/ssh/sshd_config && \
     sed -i 's|sftp-server$|sftp-server -e -u 002|' /etc/ssh/sshd_config && \
