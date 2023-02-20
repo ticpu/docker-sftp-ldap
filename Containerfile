@@ -1,5 +1,4 @@
-FROM debian:stretch
-MAINTAINER Pierre GINDRAUD <pgindraud@gmail.com>
+FROM debian:bullseye
 
 ENV LDAP_URI=ldap://ldap.host.net/ \
     LDAP_BASE=dc=example,dc=com \
